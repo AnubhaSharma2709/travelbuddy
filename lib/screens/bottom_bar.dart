@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:travelbuddy/screens/home_screen.dart';
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
 
@@ -10,27 +11,30 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List <Widget>_widgetOptions= <Widget>[
-    const Text("Home"),
+    HomeScreen(),
     const Text("Search"),
     const Text("Ticket"),
     const Text("Profile"),
   ];
 
   void _onItemtapped(int index){
-    _selectedIndex=index;
-    print('${_selectedIndex}');
+    setState(() {
+      _selectedIndex=index;
+    });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: _widgetOptions[-_selectedIndex]),
+      body: Center(child: _widgetOptions[_selectedIndex]),
       bottomNavigationBar:BottomNavigationBar(
+        currentIndex: _selectedIndex,
         onTap: _onItemtapped,
         elevation: 10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.black87,
         unselectedItemColor: Colors.black45,
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
