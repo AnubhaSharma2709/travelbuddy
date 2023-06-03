@@ -12,9 +12,9 @@ class TicketView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width,
+      width: size.width*0.85,
       child: Container(
-        margin: EdgeInsets.only(left: 16),
+        margin: EdgeInsets.only(right: 16),
         child: Column(
           children: [
             //upper part of the ticket
@@ -166,7 +166,11 @@ class TicketView extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(21),
                     bottomRight: Radius.circular(21)),),
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.only(left: 16,
+              top: 10,
+              right: 16,
+              bottom: 10,
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -184,13 +188,24 @@ class TicketView extends StatelessWidget {
                         ],
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('08:00 AM',
+                            style: Styles.headlineStyle3.copyWith(color: Colors.white),),
+                          Gap(5),
+                          Text('Departure Time',
+                            style: Styles.headlineStyle4.copyWith(color: Colors.white),),
+                        ],
+                      ),
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text('23',
                             style: Styles.headlineStyle3.copyWith(color: Colors.white),),
                           Gap(5),
-                          Text('Seat Number',
-                            style: Styles.headlineStyle4.copyWith(color: Colors.white),),
+                          Text('Seat\nNumber',
+                            style: Styles.headlineStyle4.copyWith(color: Colors.white),
+                          textAlign: TextAlign.end,),
                         ],
                       ),
                     ],
@@ -198,7 +213,6 @@ class TicketView extends StatelessWidget {
                 ],
               ),
             ),
-
           ],
         ),
       ),
