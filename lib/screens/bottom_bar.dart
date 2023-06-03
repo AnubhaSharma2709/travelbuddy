@@ -1,3 +1,4 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -7,24 +8,46 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
+  int _selectedIndex = 0;
+  static final List <Widget>_widgetOptions= <Widget>[
+    const Text("Home"),
+    const Text("Search"),
+    const Text("Ticket"),
+    const Text("Profile"),
+  ];
+
+  void _onItemtapped(int index){
+    _selectedIndex=index;
+    print('${_selectedIndex}');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Center(child: _widgetOptions[-_selectedIndex]),
       bottomNavigationBar:BottomNavigationBar(
+        onTap: _onItemtapped,
         elevation: 10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.redAccent[200],
-        unselectedItemColor: Colors.red,
-        items: [
+        selectedItemColor: Colors.black87,
+        unselectedItemColor: Colors.black45,
+        items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home), label: "Home"),
+              icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
+              activeIcon:Icon(FluentSystemIcons.ic_fluent_home_filled) ,
+              label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search), label: "Search"),
+              icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
+              activeIcon:Icon(FluentSystemIcons.ic_fluent_search_filled),
+              label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.airplane_ticket), label: "Ticket"),
+              icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
+              label: "Ticket"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person), label: "Profile"),
+              icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
+              label: "Profile"),
         ],
       ) ,
     );
