@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:travelbuddy/Widgets/PlaneContainer.dart';
 
 import '../utilis/app_layout.dart';
@@ -17,6 +18,7 @@ class TicketView extends StatelessWidget {
         margin: EdgeInsets.only(left: 16),
         child: Column(
           children: [
+            //upper part of the ticket
             Container(
               decoration: BoxDecoration(
                 color: Styles.blueColor,
@@ -78,10 +80,48 @@ class TicketView extends StatelessWidget {
                     Text('LND',
                         style: Styles.headlineStyle3
                             .copyWith(color: Colors.white)),
-                  ])
+                  ]),
+                  Gap(4),
+                  Row(
+                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                    children: [
+                    SizedBox(
+                      width: 100,
+                        child: Text('NewYork',
+                        style: Styles.headlineStyle4.copyWith(color: Colors.white),),
+                    ),
+                    Text("8H 30M", style: Styles.headlineStyle4.copyWith(color: Colors.white),),
+                    SizedBox(
+                      width: 100,
+                      child: Text('London',
+                        textAlign: TextAlign.right,
+                        style: Styles.headlineStyle4.copyWith(color: Colors.white),),
+                    ),
+                  ],)
                 ],
               ),
-            )
+            ),
+            //lower part of the ticket
+            Container(
+              color: Styles.orangeColor,
+              child: Row(
+                children: [
+                  SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        )
+                      ),
+                    ) ,
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
