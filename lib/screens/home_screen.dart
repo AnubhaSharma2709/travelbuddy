@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:travelbuddy/screens/ticket_view.dart';
 
 import '../utilis/utilis.dart';
 
@@ -92,7 +93,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ]),
-        )
+        ),
+        Gap(20),
+        TicketView(),
       ]),
     );
   }
