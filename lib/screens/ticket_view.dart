@@ -201,7 +201,7 @@ const TicketView({Key? key, required this.ticket}) : super(key: key);
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(ticket['number'],
+                          Text(ticket['number'].toString(),
                             style: Styles.headlineStyle3.copyWith(color: Colors.white),),
                           Gap(5),
                           Text('Seat\nNumber',

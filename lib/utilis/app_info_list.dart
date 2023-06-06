@@ -30,7 +30,7 @@ List<Map<String, dynamic>> ticketList = [
       'name': "London",
     },
     'flying_time': '8H 30M',
-    'date':"1 May 2023",
+    'date':"1 May",
     'departure_time': "08:00 AM",
     'number': 23
   },
@@ -44,7 +44,7 @@ List<Map<String, dynamic>> ticketList = [
       'name': "Australia",
     },
     'flying_time': '6H 30M',
-    'date':"10 May 2023",
+    'date':"10 May",
     'departure_time': "18:00 PM",
     'number': 45
   },
@@ -58,7 +58,7 @@ List<Map<String, dynamic>> ticketList = [
       'name': "India",
     },
     'flying_time': '2H 30M',
-    'date':"19 May 2023",
+    'date':"19 May",
     'departure_time': "10:00 AM",
     'number': 50
   },
