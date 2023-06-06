@@ -4,10 +4,12 @@ import 'package:travelbuddy/utilis/app_layout.dart';
 import 'package:travelbuddy/utilis/utilis.dart';
 
 class HotelScreen extends StatelessWidget {
-  const HotelScreen({Key? key}) : super(key: key);
+  final Map<String, dynamic> hotel;
+  const HotelScreen({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print('Hotel Price is ${hotel['price']}');
     final size = AppLayout.getSize(context);
     return Container(
       width: size.width*0.6,
@@ -39,28 +41,24 @@ class HotelScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Styles.primaryColor,
-                image: const DecorationImage(
+                image: DecorationImage(
                   fit: BoxFit.cover,
                     image: AssetImage(
-                      "lib/images/hotel_image.jpg"
+                      "lib/images/${hotel['image']}"
                     ),
                 ),
               ),
             ),
             const Gap(15),
-            Text("Open Space",
+            Text(hotel['place'],
                 style: Styles.headlineStyle2.copyWith(color: Colors.white)
     ),
     const Gap(5),
-            Text("London",
+            Text(hotel['destination'],
             style: Styles.headlineStyle3.copyWith(color: Colors.white),),
             const Gap(15),
-            Text("\$50/night",
+            Text('\$${hotel['price']}/night',
               style: Styles.headlineStyle.copyWith(color: Colors.white),),
-
-
-
-
           ],
         ),
     );
