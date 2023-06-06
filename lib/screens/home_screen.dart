@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:travelbuddy/screens/hotel_screen.dart';
 import 'package:travelbuddy/screens/ticket_view.dart';
 
 import '../utilis/utilis.dart';
@@ -102,11 +103,43 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               TicketView(),
             TicketView(),
+              TicketView(),
             ],
           ),
-
-        )
-      ]),
-    );
+        ),
+        Gap(40),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 14, vertical: 14,),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Hotels Near Me",
+                style: Styles.headlineStyle2,
+              ),
+              InkWell(
+                onTap: (){
+                  print("does not work");
+                },
+                child: Text(
+                  "ViewAll",
+                  style: Styles.textStyle.copyWith(color: Styles.primaryColor),
+                ),
+              ),
+            ],
+          ),
+        ),
+          SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+    padding: const EdgeInsets.only(left: 16),
+    child: Row(
+    children: [
+    HotelScreen(),
+    HotelScreen(),
+    HotelScreen(),
+    ],
+    ),
+    ),
+    ]));
   }
 }
