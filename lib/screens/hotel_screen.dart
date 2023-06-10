@@ -13,18 +13,18 @@ class HotelScreen extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return Container(
       width: size.width*0.6,
-      height: 350,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 17,
+      height: AppLayout.getHeight(350),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppLayout.getHeight(15),
+          vertical: AppLayout.getHeight(17),
         ),
-        margin: const EdgeInsets.only(
-          right: 17,
-          top: 5,
+        margin: EdgeInsets.only(
+          right: AppLayout.getHeight(17),
+          top: AppLayout.getHeight(5),
         ),
         decoration: BoxDecoration(
           color: Styles.primaryColor,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(AppLayout.getHeight(24)),
           boxShadow: [
             BoxShadow(
               color: Colors.black45,
@@ -37,9 +37,9 @@ class HotelScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 180,
+              height: AppLayout.getHeight(180),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(AppLayout.getHeight(24)),
                 color: Styles.primaryColor,
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -49,14 +49,14 @@ class HotelScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Gap(15),
+            Gap(AppLayout.getHeight(15)),
             Text(hotel['place'],
                 style: Styles.headlineStyle2.copyWith(color: Colors.white)
     ),
-    const Gap(5),
+    Gap(AppLayout.getHeight(5)),
             Text(hotel['destination'],
             style: Styles.headlineStyle3.copyWith(color: Colors.white),),
-            const Gap(15),
+            Gap(AppLayout.getHeight(16)),
             Text('\$${hotel['price']}/night',
               style: Styles.headlineStyle.copyWith(color: Colors.white),),
           ],

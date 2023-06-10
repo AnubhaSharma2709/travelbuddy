@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:travelbuddy/screens/hotel_screen.dart';
 import 'package:travelbuddy/screens/ticket_view.dart';
 import 'package:travelbuddy/utilis/app_info_list.dart';
+import 'package:travelbuddy/utilis/app_layout.dart';
 
 import '../utilis/utilis.dart';
 
@@ -22,9 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Styles.bgColor,
         body: ListView(children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(20),),
             child: Column(children: [
-              const Gap(40),
+              Gap( AppLayout.getHeight(40),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -40,10 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   Container(
-                    height: 75,
-                    width: 75,
+                    height: AppLayout.getHeight(75),
+                    width: AppLayout.getHeight(75),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(
@@ -54,14 +55,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              const Gap(25),
+               Gap(AppLayout.getHeight(25)),
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 12,
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppLayout.getHeight(12),
+                  vertical: AppLayout.getHeight(12),
                 ),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
                   color: Colors.white60,
                 ),
                 child: Row(
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Gap(40),
+              Gap(AppLayout.getHeight(40)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -97,19 +98,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ]),
           ),
-          Gap(20),
+          Gap(AppLayout.getHeight(20)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 16),
+            padding:EdgeInsets.only(left: AppLayout.getHeight(16)),
             child: Row(
-              children: ticketList.map((singleticket)=> TicketView(ticket: singleticket)).toList(),
+              children: ticketList.map((singleticket)=> TicketView(ticket: singleticket)).toList()
             ),
           ),
-          Gap(40),
+          Gap(AppLayout.getHeight(20)),
           Container(
             padding: EdgeInsets.symmetric(
-              horizontal: 14,
-              vertical: 14,
+              horizontal: AppLayout.getHeight(14),
+              vertical: AppLayout.getHeight(14),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 16),
+            padding: EdgeInsets.only(left: AppLayout.getHeight(16)),
             child: Row(
               children: hotelList.map((singlehotel)=> HotelScreen(hotel: singlehotel)).toList(),
             ),
