@@ -32,7 +32,7 @@ class _BottomBarState extends State<BottomBar> {
         backgroundColor: Styles.bgColor,
         currentIndex: _selectedIndex,
         onTap: _onItemtapped,
-        elevation: 5,
+        elevation: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.black87,
