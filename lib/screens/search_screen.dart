@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:travelbuddy/Widgets/AppText.dart';
+import 'package:travelbuddy/Widgets/Icons_text_widgets.dart';
 import 'package:travelbuddy/utilis/app_layout.dart';
 import 'package:travelbuddy/utilis/utilis.dart';
 
@@ -49,20 +51,35 @@ class SearchScreen extends StatelessWidget {
             ),
           ),
           Gap(AppLayout.getHeight(25),),
+          const AppIconText(
+            icon: Icons.flight_takeoff_rounded,
+            text: "Departure",
+          ),
+          Gap(AppLayout.getHeight(25)),
+          const AppIconText(
+            icon: Icons.flight_land_rounded,
+            text: "Arrival",
+          ),
+          Gap(AppLayout.getHeight(15)),
           Container(
-            padding: ,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(AppLayout.getWidth(5),),
+            padding: EdgeInsets.symmetric(
+              vertical: AppLayout.getWidth(12),
+              horizontal: AppLayout.getHeight(12),
             ),
-            child: Row(
-              children: [
-                const Icon(Icons.flight_takeoff_rounded,
-                color: Color(0xFFBFC2DF) ,),
-                Gap(AppLayout.getWidth(10),),
-                Text('Departure', style: Styles.textStyle,)
-              ],
+            decoration: BoxDecoration(
+              color: Color(0xD91130CE),
+              borderRadius: BorderRadius.circular(AppLayout.getWidth(10)),
+            ),
+            child: Center(
+              child: Text(
+                "Find Tickets",
+                style: Styles.textStyle.copyWith(color: Colors.white),
+              ),
             ),
           ),
+          Gap(AppLayout.getHeight(15)),
+          AppText(bigText: "Upcoming Flights", smallText: "View All"),
+
         ],
       ),
     );

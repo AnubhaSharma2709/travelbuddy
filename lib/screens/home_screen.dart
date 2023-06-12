@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:travelbuddy/Widgets/AppText.dart';
 import 'package:travelbuddy/screens/hotel_screen.dart';
 import 'package:travelbuddy/screens/ticket_view.dart';
 import 'package:travelbuddy/utilis/app_info_list.dart';
@@ -77,25 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Gap(AppLayout.getHeight(40)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Upcoming Flights",
-                    style: Styles.headlineStyle2,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      print("does not work");
-                    },
-                    child: Text(
-                      "ViewAll",
-                      style:
-                          Styles.textStyle.copyWith(color: Styles.primaryColor),
-                    ),
-                  )
-                ],
-              ),
+              AppText(bigText: "Upcoming Flights", smallText: "View All"),
+
             ]),
           ),
           Gap(AppLayout.getHeight(20)),
