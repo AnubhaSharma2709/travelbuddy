@@ -79,6 +79,94 @@ class SearchScreen extends StatelessWidget {
           ),
           Gap(AppLayout.getHeight(15)),
           AppText(bigText: "Upcoming Flights", smallText: "View All"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: AppLayout.getHeight(400),
+                width: size.width*0.42,
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppLayout.getHeight(15),
+                  vertical: AppLayout.getWidth(15),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(AppLayout.getHeight(21)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      blurRadius: 1,
+                      spreadRadius: 1,
+                    ),
+                  ]
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: AppLayout.getHeight(190),
+                      decoration: BoxDecoration(
+                        borderRadius:BorderRadius.circular(AppLayout.getHeight(21)) ,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                            image: AssetImage(
+                          "lib/images/hotel_image2.jpg",
+                        )
+                      ),
+                      ),
+                    ),
+                    Gap(AppLayout.getHeight(10)),
+                    Text('20% discount! Dont miss the chance to grab your favourite windows seat',
+                    style: Styles.headlineStyle2.copyWith(fontSize: 19),),
+
+                  ],
+                ),
+              ),
+              Column(
+                children: [
+                 Stack(
+                   children: [
+                     Container(
+                       width: size.width*0.44,
+                       height: AppLayout.getHeight(200),
+
+                       decoration: BoxDecoration(
+                         color: Colors.blueAccent,
+                         borderRadius: BorderRadius.circular(AppLayout.getHeight(18)),
+                       ),
+                       padding: EdgeInsets.symmetric(
+                         vertical: AppLayout.getHeight(15),
+                         horizontal: AppLayout.getWidth(15),
+                       ),
+                       child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text('Discounts for people with HDFC Credit Cards',
+                             style: Styles.headlineStyle3.copyWith(fontWeight: FontWeight.bold, color: Colors.black),),
+                           Gap(AppLayout.getHeight(10)),
+                           Text('Avail the best offers!\nBest offers for Best Prices',
+                             style: Styles.headlineStyle4.copyWith(color: Colors.black),),
+                         ],
+                       ),
+                     ),
+                     Positioned(
+                       right: -45,
+                       top: -40,
+                       child: Container(
+                         padding: EdgeInsets.all(AppLayout.getHeight(30),),
+                         decoration: BoxDecoration(
+                           shape: BoxShape.circle,
+                           border: Border.all(width: 18,
+                               color:Colors.amber ),
+                           color: Colors.transparent,
+                         ),
+                       ),
+                     ),
+                   ],
+                 )
+                ],
+              ),
+            ],
+          ),
 
         ],
       ),
